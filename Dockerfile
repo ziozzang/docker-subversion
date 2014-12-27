@@ -30,4 +30,4 @@ EXPOSE 80
 
 WORKDIR /var/svn
 
-CMD ["/etc/init.d/apache2 start"]
+RUN /etc/init.d/apache2 start
