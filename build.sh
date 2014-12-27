@@ -1,1 +1,1 @@
-sudo docker build -t="rkrx/docker-subversion:latest" .
+docker build --no-cache=true -t="rkrx/subversion" .

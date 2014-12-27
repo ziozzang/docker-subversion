@@ -2,24 +2,24 @@ FROM ubuntu:14.04
 
 RUN echo "1.565.1" > .lts-version-number
 
-RUN apt-get update && apt-get install -y wget git curl zip vim
-RUN apt-get update && apt-get install -y apache2 subversion libapache2-svn
+RUN apt-get update
+RUN apt-get install -y apache2 subversion libapache2-svn
 
 RUN usermod -U www-data && chsh -s /bin/bash www-data
 
 #RUN echo 'ServerName ${ENV:SERVER_NAME}' >> /etc/apache2/conf-enabled/servername.conf
 
-RUN mkdir /etc/subversion
-RUN touch /etc/subversion/svn-access
-RUN touch /etc/subversion/svn-passwd
-COPY dav_svn /etc/apache2/mods-available
+RUN rm /etc/apache2/mods-available/dav_svn.conf
+COPY dav_svn.conf /etc/apache2/mods-available/dav_svn.conf
+RUN a2enmod rewrite cgi headers dav_svn
+
+#RUN cat /etc/apache2/mods-available/dav_svn.conf
 #COPY enable-var-www-html-htaccess.conf /etc/apache2/conf-enabled/
 #COPY run_apache.sh /var/www/
-RUN a2enmod rewrite cgi headers dav_svn
 
 #volume "/var/log"
 
-RUN mkdir -p /var/svn
+RUN mkdir -p /var/svn && cd /var/svn && svnadmin create repos
 
 #VOLUME ["/var/www/html", "/var/log/apache2", "/var/svn" ]
 
@@ -32,4 +32,4 @@ EXPOSE 80
 
 WORKDIR /var/svn
 
-#CMD ["/var/www/run_apache.sh"]
+CMD ["/etc/init.d/apache2 start"]
