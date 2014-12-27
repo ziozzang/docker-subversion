@@ -31,3 +31,5 @@ EXPOSE 80
 WORKDIR /var/svn
 
 RUN /etc/init.d/apache2 start
+
+ENTRYPOINT /bin/bash
