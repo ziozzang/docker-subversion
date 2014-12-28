@@ -10,6 +10,7 @@ RUN usermod -U www-data && chsh -s /bin/bash www-data
 RUN rm /etc/apache2/mods-available/dav_svn.conf
 COPY dav_svn.conf /etc/apache2/mods-available/dav_svn.conf
 RUN a2enmod rewrite cgid headers dav_svn
+RUN a2dissite 000-default
 
 #RUN cat /etc/apache2/mods-available/dav_svn.conf
 #COPY enable-var-www-html-htaccess.conf /etc/apache2/conf-enabled/
