@@ -35,4 +35,4 @@ EXPOSE 80
 
 ADD start.sh /start.sh
 RUN chmod 755 /start.sh
-ENTRYPOINT ["bash", "/start.sh"]
+CMD ["bash", "/start.sh"]
