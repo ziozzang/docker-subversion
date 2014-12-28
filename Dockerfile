@@ -20,7 +20,7 @@ RUN a2dissite 000-default
 
 RUN mkdir -p /etc/svn
 RUN mkdir -p /var/svn
-RUN ls -la /etc/apache2
+RUN ls -la /var/log/apache2
 
 #VOLUME ["/var/www/html", "/var/log/apache2", "/var/svn"]
 
