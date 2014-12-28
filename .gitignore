@@ -2,6 +2,7 @@
 !/Dockerfile
 !/build.sh
 !/cleanup.sh
+!/start.sh
 !/run.sh
 !/dav_svn.conf
 !/README.md
