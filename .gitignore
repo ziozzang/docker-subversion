@@ -1,5 +1,6 @@
 /*
 !/Dockerfile
 !/build.sh
+!/cleanup.sh
 !/dav_svn.conf
 !/README.md
