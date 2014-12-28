@@ -1,1 +1,1 @@
-docker run --name subversion -i -p 80:80 -v /var/svn:/srv/subversion/data -v /etc/svn:/srv/subversion/conf -v /var/log/apache2:/srv/subversion/logs rkrx/subversion
+docker run --name subversion -i -p 80:80 -v /var/svn:/srv/subversion/data -v /srv/subversion/conf:/etc/svn rkrx/subversion
