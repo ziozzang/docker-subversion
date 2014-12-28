@@ -31,5 +31,6 @@ EXPOSE 80
 
 #WORKDIR /var/svn
 
-COPY start.sh /start.sh
-CMD ["/start.sh"]
+ADD start.sh /start.sh
+RUN chmod 755 /start.sh
+CMD ["bash", "/start.sh"]
