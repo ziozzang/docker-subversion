@@ -30,4 +30,4 @@ EXPOSE 80
 
 #WORKDIR /var/svn
 
-EXEC ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
