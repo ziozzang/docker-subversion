@@ -28,8 +28,6 @@ EXPOSE 80
 
 #USER www-data
 
-WORKDIR /var/svn
+#WORKDIR /var/svn
 
-RUN /etc/init.d/apache2 start
-
-ENTRYPOINT /bin/bash
+EXEC ["/usr/sbin/apache2", "-D", "FOREGROUND"]
