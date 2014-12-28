@@ -13,7 +13,6 @@ RUN a2dissite 000-default
 
 RUN mkdir -p /etc/svn
 RUN mkdir -p /var/svn
-RUN ls -la /var/log/apache2
 
 #ENV SERVERNAME "docker-subversion"
 
