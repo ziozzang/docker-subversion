@@ -31,5 +31,5 @@ EXPOSE 80
 
 #WORKDIR /var/svn
 
-COPY run.sh /srv/run.sh
-CMD ["/srv/run.sh"]
+COPY run.sh /run.sh
+CMD ["bash", "/run.sh"]
