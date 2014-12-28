@@ -31,4 +31,5 @@ EXPOSE 80
 
 #WORKDIR /var/svn
 
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+ADD run.sh /run.sh
+CMD ["/run.sh"]
