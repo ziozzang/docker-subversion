@@ -12,6 +12,7 @@ RUN a2enmod rewrite cgid headers dav_svn
 RUN a2dissite 000-default
 
 RUN sed -e s/ErrorLog/ErrorLog \/dev\/null/ /etc/apache2/conf/apache2.conf
+RUN cat /etc/apache2/conf/apache2.conf
 
 RUN mkdir -p /etc/svn
 RUN mkdir -p /var/svn
