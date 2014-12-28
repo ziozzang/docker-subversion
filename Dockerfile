@@ -19,8 +19,9 @@ RUN a2dissite 000-default
 #volume "/var/log"
 
 RUN mkdir -p /var/svn && cd /var/svn && svnadmin create repos
+RUN ls -la /var/svn
 
-#VOLUME ["/var/www/html", "/var/log/apache2", "/var/svn" ]
+#VOLUME ["/var/www/html", "/var/log/apache2", "/var/svn"]
 
 ENV SERVERNAME "docker-subversion"
 
