@@ -27,4 +27,4 @@ EXPOSE 80
 ADD start.sh /start.sh
 RUN chmod 755 /start.sh
 
-CMD /etc/init.d/apache2 start && /bin/bash
+CMD bash start.sh
