@@ -19,7 +19,7 @@ RUN a2dissite 000-default
 #volume "/var/log"
 
 RUN mkdir -p /etc/svn
-RUN mkdir -p /var/svn && cd /var/svn && svnadmin create repos
+RUN mkdir -p /var/svn
 RUN ls -la /etc/svn
 RUN ls -la /var/svn
 
