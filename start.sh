@@ -1,3 +1,3 @@
 #!/bin/bash
 /etc/init.d/apache2 start
-/bin/bash
+tail -f /var/log/apache2/error.log
