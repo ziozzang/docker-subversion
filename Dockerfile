@@ -19,6 +19,9 @@ RUN mkdir -p /var/svn
 
 #ENV SERVERNAME "docker-subversion"
 
+VOLUME /var/svn
+VOLUME /etc/svn
+
 EXPOSE 80
 
 #USER www-data
