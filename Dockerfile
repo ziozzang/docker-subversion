@@ -9,7 +9,6 @@ ENV HOME /root
 RUN sed -i 's/archive.ubuntu.com/ftp.daum.net/g' /etc/apt/sources.list
 RUN apt-get update && apt-get -y -o Dpkg::Options::="--force-confold" upgrade
 
-RUN apt-get update
 RUN apt-get install -y apache2 subversion libapache2-svn
 
 RUN usermod -U www-data && chsh -s /bin/bash www-data
