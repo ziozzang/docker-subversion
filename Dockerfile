@@ -1,5 +1,14 @@
 FROM ubuntu:14.04
 
+RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup
+RUN echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache
+ENV DEBIAN_FRONTEND noninteractive
+
+ENV HOME /root
+
+RUN sed -i 's/archive.ubuntu.com/ftp.daum.net/g' /etc/apt/sources.list
+RUN apt-get update && apt-get -y -o Dpkg::Options::="--force-confold" upgrade
+
 RUN apt-get update
 RUN apt-get install -y apache2 subversion libapache2-svn
 
